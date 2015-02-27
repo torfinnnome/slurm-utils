@@ -1,0 +1,21 @@
+<pre>
+Attached is a list of your slurm jobs that completed within the last 24 hours
+on the Orion cluster that used less than 5 CPU minutes. The list is limited to
+the 100 oldest jobs.
+
+Please note how much CPU time you requested versus what you actually used,
+and how much memory (MaxRRS) you used.
+
+PLEASE adjust your slurm script so you don't waste CPU nor memory:
+#SBATCH --ntasks=2 # My app will use two CPUs.
+#SBATCH --mem=5G   # My app will use max 5GB of memory. Warning: Job will be
+                   # killed if it uses more than 5GB!
+
+PS: Currently, using --mem is optional. However, we consider making this
+mandatory.
+
+Have a nice, productive and efficient day!
+
+Cheers,
+The Orion cluster administrators, cigene-support@rt.nmbu.no
+
