@@ -1,6 +1,6 @@
 <pre>
 Attached is a list of your slurm jobs that completed within the last 24 hours
-on the Orion cluster that used less than 5 CPU minutes. The list is limited to
+on the Orion cluster that used more than 5 CPU minutes. The list is limited to
 the 100 oldest jobs.
 
 Please note how much CPU time you requested versus what you actually used,
