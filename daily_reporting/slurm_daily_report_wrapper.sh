@@ -17,7 +17,7 @@ YESTERDAY=$(date --date "yesterday" +%Y-%m-%d)
 TODAY=$(date +%Y-%m-%d)
 
 # Get list of users whith jobs that finished yesterday.
-USERS=$(sacct --noheader -a --format=JobID,JobName,User,Partition,Account,AllocCPUS,State,ExitCode  --starttime $YESTERDAY --endtime $TODAY --state=COMPLETED|awk ' ($2 != "batch") && ($2 != "probejob")' |awk ' { print $3; }'|egrep -v 'root|galaxy' | sort|uniq |awk ' { printf "%s ", $1; }')
+USERS=$(sacct --noheader -a --format=JobID,JobName%20,User%20,Partition,Account,AllocCPUS,State,ExitCode  --starttime $YESTERDAY --endtime $TODAY --state=COMPLETED|awk ' ($2 != "batch") && ($2 != "probejob")' |awk ' { print $3; }'|egrep -v 'root|galaxy' | sort|uniq |awk ' { printf "%s ", $1; }')
 OUTDIR=$PREFIX/usage-reports/$YESTERDAY
 
 HEADER=$PREFIX/bin/slurm_daily_personal_report.header.txt
